@@ -4,20 +4,15 @@ module API
 		
 		get 'lala' do 
 			array  = [1,2,3,4,5,6]
-			{"This is a test array" => array}
+			{"yoo" => array}
 			
 		end
 		get 'front' do 
 			{"lname" => params["lastname"],"fname" => params["firstname"]}
 		end
 		get 'yolo' do
-			config   = Rails.configuration.database_configuration[Rails.env]
-			host     = config["host"]
-			database = config["database"]
-			username = config["username"]
-			password = config["password"]
-			{"host" => host, "database" => database, "username" => username, "password" => password}
-
+			ar = Rose.find(1)
+			ar
 		end
 
 		resource 'permissions' do 
