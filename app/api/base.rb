@@ -11,8 +11,13 @@ module API
 			{"lname" => params["lastname"],"fname" => params["firstname"]}
 		end
 		get 'yolo' do
-			>> Rails.configuration.database_configuration[Rails.env]
-			=> {"encoding"=>"unicode", "username"=>"postgres", "adapter"=>"postgresql", "port"=>5432, "host"=>"localhost", "password"=>"postgres", "database"=>"mydb", "pool"=>5}
+			config   = Rails.configuration.database_configuration[Rails.env]
+			host     = config["host"]
+			database = config["database"]
+			username = config["username"]
+			password = config["password"]
+			{"host" => host, "database" => database, "username" => username, "password" => password}
+
 		end
 
 		resource 'permissions' do 
