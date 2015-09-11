@@ -11,8 +11,13 @@ module API
 			{"lname" => params["lastname"],"fname" => params["firstname"]}
 		end
 		get 'yolo' do
-			ar = Rose.find(1)
-			ar
+			config   = Rails.configuration.database_configuration
+			host     = config[Rails.env]["host"]
+			database = config[Rails.env]["database"]
+			username = config[Rails.env]["username"]
+			password = config[Rails.env]["password"]
+			{"host" => host, "database" => database, "username" => username, "password" => password}
+
 		end
 
 		resource 'permissions' do 
