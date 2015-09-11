@@ -4,7 +4,7 @@ module API
 		
 		get 'lala' do 
 			array  = [1,2,3,4,5,6]
-			{"yoo" => array}
+			{"This is a test array" => array}
 			
 		end
 		get 'front' do 
