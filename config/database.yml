@@ -44,17 +44,6 @@ development:
   port: 5432
 
 
-development_sec:
-  <<: *default
-  database: db3fqpc839qctp
-
-  username: hrwrcfobpjzllm
-
-  host: ec2-54-243-187-196.compute-1.amazonaws.com
-
-  port: 5432
-
-  password: qMEOjIoJLcOg6qv8QD1fPr9M5x
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
