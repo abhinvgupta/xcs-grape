@@ -9,7 +9,11 @@ module API
 		get 'front' do 
 			{"lname" => params["lastname"],"fname" => params["firstname"]}
 		end
-
+		get 'yolo' do
+			ar = Rose.find(1)
+			ar
+		end
+		
 		resource 'permissions' do 
 			get 'tableadd' do
 				params do
