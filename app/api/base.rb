@@ -15,6 +15,12 @@ module API
 			ar
 		end
 
+		get 'dbtest' do 
+			config   = Rails.configuration.database_configuration[Rails.env]
+
+			{"database" => config["database"],"host" => config["host"]}
+		end
+
 		resource 'permissions' do 
 			get 'tableadd' do
 				params do
