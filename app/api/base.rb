@@ -11,7 +11,7 @@ module API
 			{"lname" => params["lastname"],"fname" => params["firstname"]}
 		end
 		get 'yolo' do
-			ar = Rose.find(1)
+			ar = Rose.find(:all)
 			ar
 		end
 
