@@ -1,7 +1,7 @@
 require_relative '../app/api/base.rb'
 Rails.application.routes.draw do
    mount API::Base => '/'
-   get ':controller(/:action(/:id))'
+   #get ':controller(/:action(/:id))'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
