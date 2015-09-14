@@ -4,25 +4,21 @@ module API
 		
 		get 'lala' do 
 			array  = [1,2,3,4,5,6]
-			{"yoo" => "hjfhjfhgjdgfd"}
+			{"yoo" => "array"}
 			
 		end
 		get 'front' do 
 			{"lname" => params["lastname"],"fname" => params["firstname"]}
 		end
 		get 'yolo' do
-			config   = Rails.configuration.database_configuration[Rails.env]
-			ar = Rose.first
+			config = Rails.configuration.database_configuration[Rails.env]
+			ar = Block.first
 			
 
 			{"aray" => ar,"database" => config["database"],"host" => config["host"]}
 		end
 
-		get 'dbtest' do 
-			config   = Rails.configuration.database_configuration[Rails.env]
-
-			{"database" => config["database"],"host" => config["host"]}
-		end
+		
 
 		resource 'permissions' do 
 			get 'tableadd' do
