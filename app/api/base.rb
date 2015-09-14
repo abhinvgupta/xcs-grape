@@ -11,8 +11,9 @@ module API
 			{"lname" => params["lastname"],"fname" => params["firstname"]}
 		end
 		get 'yolo' do
-			ar = Rose.first
 			config   = Rails.configuration.database_configuration[Rails.env]
+			ar = Rose.first
+			
 
 			{"aray" => ar,"database" => config["database"],"host" => config["host"]}
 		end
