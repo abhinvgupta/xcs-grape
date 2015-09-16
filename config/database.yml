@@ -78,7 +78,7 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+#     url: <%= ENV['postgres://ajlfvamjdaunbe:EDfjmJGfjgF6VM4TWoj58jN9Qa@ec2-50-19-208-138.compute-1.amazonaws.com:5432/d79mflqijiqjik'] %>
 #
 production:
   <<: *default
@@ -97,6 +97,9 @@ production:
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
   host: ec2-54-243-132-114.compute-1.amazonaws.com
+  production:
+    url: <%= ENV['postgres://ajlfvamjdaunbe:EDfjmJGfjgF6VM4TWoj58jN9Qa@ec2-50-19-208-138.compute-1.amazonaws.com:5432/d79mflqijiqjik'] %>
+
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
