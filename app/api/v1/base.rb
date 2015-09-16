@@ -1,7 +1,7 @@
-require_relative 'end'
+require_relative 'end.rb'
 module API
 	module V1
-		class Base < GRAPE::API
+		class Base < Grape::API
 			mount API::V1::End
 
 		end

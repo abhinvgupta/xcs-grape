@@ -1,9 +1,8 @@
-require_relative 'v1/base'
+require_relative 'v1/base.rb'
 module API
-	module V1
-		class Base < GRAPE::API
-			mount API::V1::Base
+	class Base < Grape::API
+		mount API::V1::Base
 
-		end
 	end
+
 end
