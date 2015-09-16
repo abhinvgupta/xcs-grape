@@ -1,20 +1,8 @@
 class StudentSession < ActiveRecord::Base
-
-	establish_connection "#{Rails.env}_sec"
-	@@que = []
-	#@@answer =Answer.find(1)
-	def arrr
-		ss =StudentSession.where(user_id: (80..110))
-		ss.each do |s|
-			@@que << s.as_json
-		end
-
-
-	end
-
-	def question
-		@@que 
-	end
+	belongs_to :user
+	has_many :student_session_data
+	has_many :session_assessments
+	has_one :session_activity_data
+	has_many :session_activity_levels_data
 	
-
 end

@@ -1,3 +1,3 @@
-class LessonPlan < ActiveReacord::Base
+class LessonPlan < ActiveRecord::Base
 	
 end
