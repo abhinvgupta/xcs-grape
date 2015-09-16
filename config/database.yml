@@ -98,7 +98,7 @@ production:
   # domain sockets, so uncomment these lines.
   host: ec2-54-243-132-114.compute-1.amazonaws.com
   production:
-    url: <%= ENV['postgres://ajlfvamjdaunbe:EDfjmJGfjgF6VM4TWoj58jN9Qa@ec2-50-19-208-138.compute-1.amazonaws.com:5432/d79mflqijiqjik'] =%>
+    url: <%= ENV['postgres://ajlfvamjdaunbe:EDfjmJGfjgF6VM4TWoj58jN9Qa@ec2-50-19-208-138.compute-1.amazonaws.com:5432/d79mflqijiqjik'] %>
 
 
   # The TCP port the server listens on. Defaults to 5432.
