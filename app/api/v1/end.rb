@@ -5,7 +5,7 @@ module API
 			
 			get 'lala' do 
 				array  = [1,2,3,4,5,6]
-				{"yoo" => array}
+				array
 				
 			end
 			get 'front' do 
@@ -18,7 +18,9 @@ module API
 
 				{"aray" => ar,"database" => config["database"],"host" => config["host"]}
 			end
-
+			get 'fu' do 
+				{"yolo" => "mofo"}
+			end
 			get 'dbtest' do 
 				config   = Rails.configuration.database_configuration[Rails.env]
 
