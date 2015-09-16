@@ -12,7 +12,7 @@ module API
 		end
 		get 'yolo' do
 			config = Rails.configuration.database_configuration[Rails.env]
-			ar = Block.first
+			ar = Rose.first
 			
 
 			{"aray" => ar,"database" => config["database"],"host" => config["host"]}
