@@ -41,6 +41,7 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -98,6 +99,8 @@ GEM
     rack (1.6.4)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-contrib (1.2.0)
+      rack (>= 0.9.1)
     rack-cors (0.3.1)
     rack-mount (0.8.3)
       rack (>= 1.0.0)
@@ -176,12 +179,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   byebug
   coffee-rails (~> 4.1.0)
   grape
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  rack-contrib
   rack-cors
   rails (= 4.2.3)
   rails_12factor
