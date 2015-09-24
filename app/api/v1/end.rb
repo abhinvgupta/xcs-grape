@@ -7,7 +7,7 @@ module API
 			
 
 			get 'lala' do 
-				array  = Helpers.ll("yolomofo")
+				array  = [1,2,3,4,5,6]
 				array
 				
 			end
