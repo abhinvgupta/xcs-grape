@@ -1,12 +1,19 @@
 class User < ActiveRecord::Base
+	include Clearance::User
 	has_many :student_sessions
 	# after_create :generate_confirmation_token!
 
 	# has_secure_password
-	def self.authenticate(password)
+	def self.authenticate(userid,password)
 	    puts "In self.authenticate"
-	    return nil  unless user = find_by_password(password)
-	    #return user if     user.authenticated?(password)
+	    if user = User.where(:username => userid)
+	    	return user
+	    else 
+	    	return nil
+
+	    end
+
+	
 	end
 
 	private
