@@ -11,10 +11,10 @@ module API
 					mod = params[:module]
 					act = params[:act]
 					name = mod + "." + act
-					PermissionTable.create(:name => name)
+					ss= PermissionTable.create(:name => name)
 					config   = Rails.configuration.database_configuration[Rails.env]
 
-					{"database" => config["database"],"host" => config["host"]}
+					{"newperm" => ss, "database" => config["database"],"host" => config["host"]}
 				end
 				post 'matrixadd' do
 					params do

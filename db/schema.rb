@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150921081552) do
+ActiveRecord::Schema.define(version: 20150928110840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(version: 20150921081552) do
   add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", unique: true, using: :btree
   add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id", using: :btree
 
+  create_table "ass_categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_types", force: :cascade do |t|
+    t.string   "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "languages", force: :cascade do |t|
     t.string   "lang"
     t.datetime "created_at", null: false
@@ -91,6 +102,26 @@ ActiveRecord::Schema.define(version: 20150921081552) do
     t.datetime "updated_at"
   end
 
+  create_table "permission_matrices", force: :cascade do |t|
+    t.integer  "permission_id"
+    t.integer  "role_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "permission_tables", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "q_categories", force: :cascade do |t|
+    t.integer  "q_id"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "question_texts", force: :cascade do |t|
     t.integer  "question_id"
     t.integer  "language_id"
@@ -112,6 +143,13 @@ ActiveRecord::Schema.define(version: 20150921081552) do
     t.integer  "display_order"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "session_activity_data", force: :cascade do |t|
@@ -190,6 +228,13 @@ ActiveRecord::Schema.define(version: 20150921081552) do
     t.integer  "rewind_count"
     t.integer  "forward_count"
     t.boolean  "lang_toggle"
+  end
+
+  create_table "shot_types", force: :cascade do |t|
+    t.integer  "course_id"
+    t.string   "desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "student_session_data", force: :cascade do |t|

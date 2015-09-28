@@ -1,0 +1,8 @@
+class CreateAssCategories < ActiveRecord::Migration
+  def change
+    create_table :ass_categories do |t|
+    	
+    	t.timestamps null: false
+    end
+  end
+end
