@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	# after_create :generate_confirmation_token!
 
 	# has_secure_password
-	def self.authenticate(userid,password)
+	def self.authenticate(userid)
 	    puts "In self.authenticate"
 	    if user = User.where(:username => userid)
 	    	return user

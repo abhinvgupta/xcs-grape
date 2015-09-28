@@ -15,6 +15,7 @@ module API
       		if user
       			puts user
       		end
+          user
 
       	end
       end
