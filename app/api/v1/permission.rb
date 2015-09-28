@@ -3,7 +3,7 @@ module API
 		class Permission < Grape::API				
 
 			resource 'permissions' do 
-				get 'tableadd' do
+				post 'tableadd' do
 					params do
 						requires :module,type: :string
 						requires :act,type: :string
@@ -12,7 +12,7 @@ module API
 					act = params[:act]
 					name = mod + "." + act
 					ss= PermissionTable.create(:name => name)
-					
+					ss
 				end
 				post 'matrixadd' do
 					params do
