@@ -14,9 +14,12 @@ module API
         get ':id' do
           authenticate!
           question = Question.find(params[:id])
-          present question, with: API::V1::Representers::QuestionRepresenter
+         # present question, with: API::V1::Representers::QuestionRepresenter
         end
 
+        get 'all' do
+          question = Question.find(:all)
+        end
         desc "Get next question based on results"
         params do
           requires :id, type: Integer, desc: 'Question id.'
@@ -25,7 +28,7 @@ module API
         get ':id/next/:path' do
           authenticate!
           question = Question.next(params[:id], params[:path])
-          present question, with: API::V1::Representers::QuestionRepresenter
+         # present question, with: API::V1::Representers::QuestionRepresenter
         end
 
         desc "Get answers for a question"
@@ -35,7 +38,7 @@ module API
         get ':id/answers' do
           authenticate!
           answers = Answer.where(question_id: params[:id])
-          present answers, with: API::V1::Representers::AnswersRepresenter
+          #present answers, with: API::V1::Representers::AnswersRepresenter
         end
 
       end
